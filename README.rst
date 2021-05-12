@@ -1,14 +1,16 @@
-Exergy Analysis of a Supercritical CO<sub>2</sub> Power Cycle in TESPy
+.. |CO2| replace:: CO\ :sub:`2`
+
+Exergy Analysis of a Supercritical |CO2| Power Cycle in TESPy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example for the exergy analysis in `TESPy <https://github.com/oemof/tespy>`_.
 Find more information about the exergy analysis feature in the respective
 `online documentation <https://tespy.readthedocs.io/>`_.
 
-The supercritical CO:sub:`2` power cycle model has the following topology:
+The supercritical |CO2| power cycle model has the following topology:
 
 .. figure:: ./flowsheet.svg
     :align: center
-    :alt: Topology of the supercritical CO:sub:`2` power cycle
+    :alt: Topology of the supercritical |CO2| power cycle
 
 Usage
 -----
@@ -23,9 +25,9 @@ to install the version requirements for the sCO2.py python script.
 
 The original data of the plant are obtained from the following publication:
 
-*M. Penkuhn, G. Tsatsaronis, Exergoeconomic analyses of different sCO:sub:`2`
-cycle configurations, in: The 6:sup:`th` International Symposium –
-Supercritical CO:sub:`2` Power Cycles, 2018.*
+*M. Penkuhn, G. Tsatsaronis, Exergoeconomic analyses of different
+sCO2 cycle configurations, in: The 6th International
+Symposium – Supercritical CO2 Power Cycles, 2018.*
 
 Citation
 --------
