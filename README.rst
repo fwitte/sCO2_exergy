@@ -1,7 +1,7 @@
 .. |CO2| replace:: CO\ :sub:`2`
 
 Exergy Analysis of a Supercritical |CO2| Power Cycle in TESPy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Example for the exergy analysis in `TESPy <https://github.com/oemof/tespy>`_.
 Find more information about the exergy analysis feature in the respective
 `online documentation <https://tespy.readthedocs.io/>`_.
