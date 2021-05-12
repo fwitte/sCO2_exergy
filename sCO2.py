@@ -123,17 +123,6 @@ ean.analyse(pamb=pamb, Tamb=Tamb)
 # print exergy analysis results to prompt
 ean.print_results()
 
-print((ean.network_data / 1e6).to_frame().transpose().to_latex(float_format="%.2f"))
-
-ean.group_data[['E_F', 'E_P', 'E_D']] /= 1e6
-ean.group_data[['epsilon', 'y_Dk', 'y*_Dk']] *= 1e2
-
-print(ean.group_data)
-print(ean.group_data.sum())
-print(ean.component_data.sum())
-print(ean.bus_data.sum())
-print(ean.group_data.to_latex(float_format="%.2f"))
-
 # generate Grassmann diagram
 links, nodes = ean.generate_plotly_sankey_input()
 
