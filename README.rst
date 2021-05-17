@@ -12,6 +12,9 @@ The supercritical |CO2| power cycle model has the following topology:
     :align: center
     :alt: Topology of the supercritical |CO2| power cycle
 
+Find the model specifications and results in the SEGS.py script and the
+corresponding `pdf model report <sCO2_model_report.pdf>`_
+
 Usage
 -----
 Clone the repository and build a new python environment. From the base
@@ -33,7 +36,7 @@ Citation
 --------
 The state of this repository is archived via zenodo. If you are using the
 TESPy model within your own research, you can refer to this model via the
-zenodo doi: `10.5281/zenodo.TODO <https://zenodo.org/record/TODO>`_.
+zenodo doi: `10.5281/zenodo.4751797 <https://zenodo.org/record/4751797>`_.
 
 MIT License
 -----------

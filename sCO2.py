@@ -111,10 +111,23 @@ nw.solve(mode='design')
 # print results to prompt and generate model documentation
 nw.print_results()
 
-print(abs(cp1.P.val + cp2.P.val + turb.P.val) / heater.Q.val)
-print(abs(power.P.val) / heater.Q.val)
-
-document_model(nw)
+fmt = {
+    'latex_body': True,
+    'include_results': True,
+    'HeatExchanger': {
+        'params': ['Q', 'ttd_l', 'ttd_u', 'pr1', 'pr2']},
+    'Condenser': {
+        'params': ['Q', 'ttd_l', 'ttd_u', 'pr1', 'pr2']},
+    'Connection': {
+        'p': {'float_fmt': '{:,.4f}'},
+        's': {'float_fmt': '{:,.4f}'},
+        'h': {'float_fmt': '{:,.2f}'},
+        'fluid': {'include_results': False}
+    },
+    'include_results': True,
+    'draft': False
+}
+document_model(nw, filename='sCO2_model_report.tex', fmt=fmt)
 
 # carry out exergy analysis
 ean = ExergyAnalysis(nw, E_P=[power], E_F=[heat_input_bus])
