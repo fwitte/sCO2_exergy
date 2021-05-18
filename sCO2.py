@@ -64,10 +64,7 @@ c13 = Connection(m1, 'out1', rec2, 'in2', label='13')
 c14 = Connection(rec2, 'out1', rec1, 'in1', label='14')
 c15 = Connection(rec1, 'out1', sp1, 'in1', label='15')
 
-# c20 = Connection(water_in, 'out1', cooler, 'in2', label='21')
-# c21 = Connection(cooler, 'out2', water_out, 'in1', label='22')
-
-    # add connections to network
+# add connections to network
 nw.add_conns(c0, c1, c2, c3, c4, c5, c6, c10, c11, c12, c13, c14, c15)
 
 # power bus

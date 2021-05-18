@@ -68,9 +68,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="203.9332"
-     inkscape:cx="469.35463"
-     inkscape:zoom="1.0957492"
+     inkscape:cy="184.50896"
+     inkscape:cx="586.425"
+     inkscape:zoom="1.2394592"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -100,7 +100,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -181,7 +181,7 @@
        inkscape:export-filename="C:\Users\meinm\Documents\1 Uni\8. Semester SS20\1 Bachelorarbeit\Inhalt\Abbildungen\SEGSvi_Tespy.png"
        id="rect1213-2"
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 64.379481,122.49881 5,2.50583 v 0 l -5,2.49417 z"
+       d="m 215,122.49881 5,2.50583 v 0 l -5,2.49417 z"
        sodipodi:nodetypes="ccccc" />
     <g
        transform="rotate(90,0.01445668,-19.986735)"
@@ -427,12 +427,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="220.9187"
-       y="122.69433"
+       y="122.80024"
        id="text1297-7"><tspan
          sodipodi:role="line"
          id="tspan1295-4"
          x="220.9187"
-         y="122.69433"
+         y="122.80024"
          style="stroke-width:0.264583">4</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -441,12 +441,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="208.59363"
-       y="68.644135"
+       y="67.80024"
        id="text1297-0"><tspan
          sodipodi:role="line"
          id="tspan1295-2"
          x="208.59363"
-         y="68.644135"
+         y="67.80024"
          style="stroke-width:0.264583">5</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -455,12 +455,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="126.33501"
-       y="68.811447"
+       y="67.80024"
        id="text1297-74"><tspan
          sodipodi:role="line"
          id="tspan1295-7"
          x="126.33501"
-         y="68.811447"
+         y="67.80024"
          style="stroke-width:0.264583">11</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -469,12 +469,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="183.1778"
-       y="123.15033"
+       y="122.80024"
        id="text1297-6"><tspan
          sodipodi:role="line"
          id="tspan1295-6"
          x="183.1778"
-         y="123.15033"
+         y="122.80024"
          style="stroke-width:0.264583">3</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -483,12 +483,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="155.89755"
-       y="122.89126"
+       y="122.80024"
        id="text1297-03"><tspan
          sodipodi:role="line"
          id="tspan1295-73"
          x="155.89755"
-         y="122.89126"
+         y="122.80024"
          style="stroke-width:0.264583">13</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -497,12 +497,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="138.65811"
-       y="122.72395"
+       y="122.80024"
        id="text1297-5"><tspan
          sodipodi:role="line"
          id="tspan1295-41"
          x="138.65811"
-         y="122.72395"
+         y="122.80024"
          style="stroke-width:0.264583">12</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -511,12 +511,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="104.32732"
-       y="122.97491"
+       y="122.80024"
        id="text1297-8"><tspan
          sodipodi:role="line"
          id="tspan1295-8"
          x="104.32732"
-         y="122.97491"
+         y="122.80024"
          style="stroke-width:0.264583">2</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -525,12 +525,12 @@
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
        x="71.263939"
-       y="123.08435"
+       y="122.80024"
        id="text1297-65"><tspan
          sodipodi:role="line"
          id="tspan1295-5"
          x="71.263939"
-         y="123.08435"
+         y="122.80024"
          style="stroke-width:0.264583">1</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -580,13 +580,13 @@
        inkscape:export-filename="C:\Users\meinm\Documents\1 Uni\8. Semester SS20\1 Bachelorarbeit\Inhalt\Abbildungen\SEGSvi_Tespy.png"
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="146.7341"
-       y="139.04323"
+       x="146.72388"
+       y="137.80023"
        id="text1297-9"><tspan
          sodipodi:role="line"
          id="tspan1295-0"
-         x="146.7341"
-         y="139.04323"
+         x="146.72388"
+         y="137.80023"
          style="stroke-width:0.264583">14</tspan></text>
     <text
        inkscape:export-ydpi="1012"
@@ -594,13 +594,13 @@
        inkscape:export-filename="C:\Users\meinm\Documents\1 Uni\8. Semester SS20\1 Bachelorarbeit\Inhalt\Abbildungen\SEGSvi_Tespy.png"
        xml:space="preserve"
        style="font-size:4.9389px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="61.187904"
-       y="119.06058"
+       x="207.43007"
+       y="122.80024"
        id="text1297-64"><tspan
          sodipodi:role="line"
          id="tspan1295-62"
-         x="61.187904"
-         y="119.06058"
+         x="207.43007"
+         y="122.80024"
          style="stroke-width:0.264583">0</tspan></text>
     <text
        id="text1297-74-7"
