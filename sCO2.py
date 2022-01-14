@@ -282,8 +282,8 @@ df_tespy = df_tespy.loc[idx, df_original_data.columns]
 df_diff_abs = df_tespy - df_original_data
 df_diff_rel = (df_tespy - df_original_data) / df_original_data
 
-result_to_markdown(df_diff_abs, 'results/connections_delta_absolute', 'Δ ')
-result_to_markdown(df_diff_rel, 'results/connections_delta_relative', 'δ ')
+result_to_markdown(df_diff_abs, 'connections_delta_absolute', 'Δ ')
+result_to_markdown(df_diff_rel, 'connections_delta_relative', 'δ ')
 
 # validation (components, needs re-check)
 
@@ -303,14 +303,14 @@ df_original_data = df_original_data.loc[idx, cols]
 df_diff_abs = (df_tespy - df_original_data).dropna()
 df_diff_rel = ((df_tespy - df_original_data) / df_original_data).dropna()
 
-result_to_markdown(df_diff_abs * 1e6, 'results/components_delta_absolute', 'Δ ')
-result_to_markdown(df_diff_rel, 'results/components_delta_relative', 'δ ')
+result_to_markdown(df_diff_abs * 1e6, 'components_delta_absolute', 'Δ ')
+result_to_markdown(df_diff_rel, 'components_delta_relative', 'δ ')
 
 # export results
 
 network_result = ean.network_data.to_frame().transpose()
 
 ean.aggregation_data.drop(columns=['group'], inplace=True)
-result_to_markdown(ean.aggregation_data, 'results/components_result')
-result_to_markdown(ean.connection_data, 'results/connections_result')
-result_to_markdown(network_result, 'results/network_result')
+result_to_markdown(ean.aggregation_data, 'components_result')
+result_to_markdown(ean.connection_data, 'connections_result')
+result_to_markdown(network_result, 'network_result')
