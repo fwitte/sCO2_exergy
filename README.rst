@@ -32,6 +32,50 @@ The original data of the plant are obtained from the following publication:
 sCO2 cycle configurations, in: The 6th International
 Symposium – Supercritical CO2 Power Cycles, 2018.*
 
+Valdiation and Results of Exergy Analysis
+-----------------------------------------
+
+The tables below show the results of the simulation as well as the validation
+results. The original data from the publication are provided in the .csv files
+`<component_validation.csv>`_ and `<connection_validation.csv>`_.
+
+Connection data
+^^^^^^^^^^^^^^^
+
+**TESPy simulation**
+
+.. include::  results/connections_result
+
+**Absolute difference in the values Δ**
+
+.. include::  results/connections_delta_absolute
+
+**Relative deviation in the values δ**
+
+.. include::  results/connections_delta_relative
+
+Component data
+^^^^^^^^^^^^^^
+
+**TESPy simulation**
+
+.. include::  results/components_result
+
+**Absolute difference in the values Δ**
+
+.. include::  results/components_delta_absolute
+
+**Relative deviation in the values δ**
+
+.. include::  results/components_delta_relative
+
+*High deviation at heater through different fuel and product definitions*
+
+Network data (results only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include::  results/network_result
+
 Citation
 --------
 The state of this repository is archived via zenodo. If you are using the
