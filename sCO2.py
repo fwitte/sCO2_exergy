@@ -13,6 +13,115 @@ from tespy.tools import ExergyAnalysis
 
 import plotly.graph_objects as go
 
+fmt_dict = {
+    'E_F': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6,
+    },
+    'E_P': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6,
+    },
+    'E_D': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6,
+    },
+    'E_L': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6,
+    },
+    'epsilon': {
+        'unit': ' in %',
+        'float': '{:.1f}',
+        'factor': 1 / 100,
+        'markdown_header': 'ε'
+    },
+    'y_Dk': {
+        'unit': ' in %',
+        'float': '{:.1f}',
+        'factor': 1 / 100
+    },
+    'y*_Dk': {
+        'unit': ' in %',
+        'float': '{:.1f}',
+        'factor': 1 / 100
+    },
+    'e_T': {
+        'unit': ' in kJ/kg',
+        'float': '{:.1f}',
+        'factor': 1000
+    },
+    'e_M': {
+        'unit': ' in kJ/kg',
+        'float': '{:.1f}',
+        'factor': 1000
+    },
+    'e_PH': {
+        'unit': ' in kJ/kg',
+        'float': '{:.1f}',
+        'factor': 1000
+    },
+    'E_T': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6
+    },
+    'E_M': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6
+    },
+    'E_PH': {
+        'unit': ' in MW',
+        'float': '{:.2f}',
+        'factor': 1e6
+    },
+    'T': {
+        'unit': ' in °C',
+        'float': '{:.1f}',
+        'factor': 1
+    },
+    'p': {
+        'unit': ' in bar',
+        'float': '{:.2f}',
+        'factor': 1
+    },
+    'h': {
+        'unit': ' in kJ/kg',
+        'float': '{:.1f}',
+        'factor': 1
+    }
+}
+
+
+def result_to_markdown(df, filename, prefix=''):
+
+    for col in df.columns:
+        fmt = fmt_dict[col]['float']
+        if prefix == 'δ ':
+            unit = ' in %'
+            df[col] *= 100
+        else:
+            unit = fmt_dict[col]['unit']
+            df[col] /= fmt_dict[col]['factor']
+        for row in df.index:
+            df.loc[row, col] = str(fmt.format(df.loc[row, col]))
+        if 'markdown_header' not in fmt_dict[col]:
+            fmt_dict[col]['markdown_header'] = col
+
+        df = df.rename(columns={
+            col: prefix + fmt_dict[col]['markdown_header'] + unit
+        })
+    df.to_markdown(
+        filename, disable_numparse=True,
+        colalign=['left'] + ['right' for _ in df.columns],
+        tablefmt='rst'
+    )
+
 
 # specification of ambient state
 pamb = 1.01325
@@ -134,13 +243,74 @@ ean.analyse(pamb=pamb, Tamb=Tamb)
 ean.print_results()
 
 # generate Grassmann diagram
-links, nodes = ean.generate_plotly_sankey_input()
+links, nodes = ean.generate_plotly_sankey_input(
+    node_order=[
+        'E_F', 'heat input', 'Heater', 'Cycle closer', 'CMP', 'REC',
+        'Turbine', 'Water cooler', 'total output power', 'E_P', 'E_L', 'E_D'
+    ]
+)
+
+# norm values to to E_F
+links['value'] = [val / links['value'][0] for val in links['value']]
 
 fig = go.Figure(go.Sankey(
-    arrangement="freeform",
+    arrangement="snap",
+    textfont={"family": "Linux Libertine O"},
     node={
         "label": nodes,
         'pad': 11,
         'color': 'orange'},
     link=links))
 fig.show()
+
+# validation (connections)
+
+df_original_data = pd.read_csv(
+    'connection_validation.csv', sep=';', decimal=',', index_col='label'
+)
+
+df_tespy = pd.concat(
+    # units of exergy are J/kg in TESPy, kJ/kg in original data
+    [nw.results['Connection'], ean.connection_data / 1e3], axis=1
+)
+# make index numeric to match indices
+df_tespy.index = pd.to_numeric(df_tespy.index, errors='coerce')
+# select available indices
+idx = np.intersect1d(df_tespy.index, df_original_data.index)
+df_tespy = df_tespy.loc[idx, df_original_data.columns]
+
+df_diff_abs = df_tespy - df_original_data
+df_diff_rel = (df_tespy - df_original_data) / df_original_data
+
+result_to_markdown(df_diff_abs, 'results/connections_delta_absolute', 'Δ ')
+result_to_markdown(df_diff_rel, 'results/connections_delta_relative', 'δ ')
+
+# validation (components, needs re-check)
+
+df_original_data = pd.read_csv(
+    'component_validation.csv', sep=';', decimal=',', index_col='label'
+)
+
+# use aggregated data, as these include mechanical losses of compressor/turbine
+df_tespy = ean.aggregation_data.copy()
+# # select available indices
+idx = np.intersect1d(df_tespy.index, df_original_data.index)
+cols = ['E_F', 'E_P', 'E_D']
+# original data in MW
+df_tespy = df_tespy.loc[idx, cols] / 1e6
+df_original_data = df_original_data.loc[idx, cols]
+
+df_diff_abs = (df_tespy - df_original_data).dropna()
+df_diff_rel = ((df_tespy - df_original_data) / df_original_data).dropna()
+
+result_to_markdown(df_diff_abs * 1e6, 'results/components_delta_absolute', 'Δ ')
+result_to_markdown(df_diff_rel, 'results/components_delta_relative', 'δ ')
+
+# export results
+
+network_result = ean.network_data.to_frame().transpose()
+
+ean.aggregation_data.drop(columns=['group'], inplace=True)
+result_to_markdown(ean.aggregation_data, 'results/components_result')
+result_to_markdown(ean.connection_data, 'results/connections_result')
+result_to_markdown(network_result, 'results/network_result')

@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    inkscape:export-ydpi="1012"
    inkscape:export-xdpi="1012"
    inkscape:export-filename="C:\Users\meinm\Documents\1 Uni\1 Bachelor EPT\1 Bachelorarbeit\1 Paper TESPy_Exergie\Abbildungen\sCO2_draft.png"
    sodipodi:docname="flowsheet.svg"
-   inkscape:version="1.0.2 (1.0.2+r75+1)"
+   inkscape:version="1.1.1 (eb90963e84, 2021-10-02)"
    id="svg8"
    version="1.1"
    viewBox="0 0 242.03023 102.17961"
    height="102.17961mm"
-   width="242.03023mm">
+   width="242.03023mm"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <defs
      id="defs2">
     <linearGradient
@@ -51,10 +51,10 @@
   </defs>
   <sodipodi:namedview
      inkscape:window-maximized="1"
-     inkscape:window-y="0"
-     inkscape:window-x="1920"
-     inkscape:window-height="1172"
-     inkscape:window-width="1920"
+     inkscape:window-y="27"
+     inkscape:window-x="72"
+     inkscape:window-height="1016"
+     inkscape:window-width="1848"
      inkscape:snap-to-guides="false"
      inkscape:guide-bbox="true"
      showguides="true"
@@ -68,9 +68,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="184.50896"
-     inkscape:cx="586.425"
-     inkscape:zoom="1.2394592"
+     inkscape:cy="330.13924"
+     inkscape:cx="490.19075"
+     inkscape:zoom="0.9465703"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -80,7 +80,8 @@
      fit-margin-top="5"
      fit-margin-left="5"
      fit-margin-right="5"
-     fit-margin-bottom="5">
+     fit-margin-bottom="5"
+     inkscape:pagecheckerboard="0">
     <inkscape:grid
        spacingy="1"
        spacingx="1"
@@ -100,7 +101,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -662,7 +662,7 @@
          id="tspan1295-7-2-1"
          x="112.20296"
          y="146.52747"
-         style="stroke-width:0.264583">Preheater 1</tspan></text>
+         style="stroke-width:0.264583">Recuperator 1</tspan></text>
     <text
        inkscape:export-ydpi="1012"
        inkscape:export-xdpi="1012"
@@ -676,7 +676,7 @@
          id="tspan1295-7-2-6"
          x="156.35448"
          y="146.52747"
-         style="stroke-width:0.264583">Preheater 2</tspan></text>
+         style="stroke-width:0.264583">Recuperator 2</tspan></text>
     <text
        id="text1025-3"
        y="96.863678"
