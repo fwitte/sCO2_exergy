@@ -2,11 +2,9 @@
 
 from tespy.networks import Network
 from tespy.components import (
-    Sink, Source, Turbine, Condenser, HeatExchangerSimple, Merge, Splitter,
-    Valve, HeatExchanger, CycleCloser, Compressor)
+    Sink, Source, Turbine, SimpleHeatExchanger, Merge, Splitter,
+    HeatExchanger, CycleCloser, Compressor)
 from tespy.connections import Connection, Bus, Ref
-from tespy.tools import CharLine
-from tespy.tools import document_model
 import pandas as pd
 import numpy as np
 from tespy.tools import ExergyAnalysis
@@ -145,8 +143,8 @@ cp2 = Compressor('Compressor 2', fkt_group='CMP')
 rec1 = HeatExchanger('Recuperator 1', fkt_group='REC')
 rec2 = HeatExchanger('Recuperator 2', fkt_group='REC')
 
-cooler = HeatExchangerSimple('Water cooler')
-heater = HeatExchangerSimple('Heater')
+cooler = SimpleHeatExchanger('Water cooler')
+heater = SimpleHeatExchanger('Heater')
 
 turb = Turbine('Turbine')
 
@@ -215,24 +213,6 @@ power.set_attr(P=-100e6)
 nw.solve(mode='design')
 # print results to prompt and generate model documentation
 nw.print_results()
-
-fmt = {
-    'latex_body': True,
-    'include_results': True,
-    'HeatExchanger': {
-        'params': ['Q', 'ttd_l', 'ttd_u', 'pr1', 'pr2']},
-    'Condenser': {
-        'params': ['Q', 'ttd_l', 'ttd_u', 'pr1', 'pr2']},
-    'Connection': {
-        'p': {'float_fmt': '{:,.4f}'},
-        's': {'float_fmt': '{:,.4f}'},
-        'h': {'float_fmt': '{:,.2f}'},
-        'fluid': {'include_results': False}
-    },
-    'include_results': True,
-    'draft': False
-}
-document_model(nw, filename='sCO2_model_report.tex', fmt=fmt)
 
 # carry out exergy analysis
 ean = ExergyAnalysis(nw, E_P=[power], E_F=[heat_input_bus])
