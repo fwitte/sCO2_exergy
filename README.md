@@ -11,9 +11,6 @@ topology:
 <img src="./flowsheet.svg" class="align-center" />
 </figure>
 
-Find the model specifications and results in the sCO2.py script and the
-corresponding [pdf model report][].
-
 ## Usage
 
 Clone the repository and build a new python environment. From the base
@@ -150,8 +147,7 @@ zenodo doi: [10.5281/zenodo.4751796][].
 
 ## MIT License
 
-Copyright (c) 2022 Francesco Witte, Julius Meier, Ilja Tuschy,
-Mathias Hofmann
+Copyright (c) Francesco Witte, Julius Meier, Ilja Tuschy, Mathias Hofmann
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
