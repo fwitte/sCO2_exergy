@@ -653,7 +653,7 @@ wheels = [
 
 [[package]]
 name = "tespy"
-version = "0.9.16.post2"
+version = "0.9.16.post3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "coolprop" },
@@ -666,9 +666,9 @@ dependencies = [
     { name = "scipy" },
     { name = "tabulate" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/2d/c0/80aa7ca8db849b4b6896f69aa62ef24e0453bd56ce31c05f6612240e5b45/tespy-0.9.16.post2.tar.gz", hash = "sha256:36a2040e17f117d020e3df84fd8b109bc0144cb2e509934f1bc3815b1a8d9697", size = 5007868, upload-time = "2026-04-28T11:54:56.161Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1b/62/4a59b90ac031dc36227528baddef6c730460e7ace6666d45d2c77a6ae3c1/tespy-0.9.16.post3.tar.gz", hash = "sha256:66b2af20dc87a48e0624509d4937f1c5e6cfc438151adc0528ad358e2ba60087", size = 5169368, upload-time = "2026-05-07T07:57:08.478Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/0e/b7/dfa3587d72a6a2aa9d35600252e4b17d5368c51a596ce06257afda5758bf/tespy-0.9.16.post2-py3-none-any.whl", hash = "sha256:c4170af27a3e3c4b243463f7155f6e4a3b3618270e68cfc48f69e77fa4a92bde", size = 367260, upload-time = "2026-04-28T11:54:46.114Z" },
+    { url = "https://files.pythonhosted.org/packages/79/f6/32574be6845d702a115e505ea69179a84051239446e371ac06fb25fa07b2/tespy-0.9.16.post3-py3-none-any.whl", hash = "sha256:829aaadd0b049b435669ea8a04fbbd7f8206324c7a83c4b642409b5e2ee73a83", size = 367466, upload-time = "2026-05-07T07:57:05.444Z" },
 ]
 
 [[package]]
