@@ -1,0 +1,10 @@
+[project]
+name = "sco2-exergy"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "exerpy>=0.0.7",
+    "tespy>=0.9.16.post2",
+]
