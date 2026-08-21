@@ -13,21 +13,31 @@ topology:
 
 ## Usage
 
-Clone the repository and install dependencies. From the base directory
-of the repository run
+Clone the repository and install dependencies. We recommend using [uv][]:
 
 ``` bash
 uv sync
 ```
 
-to create a virtual environment and install all dependencies. Then run
-scripts with `uv run main.py` or activate the environment with
-`source .venv/bin/activate`.
+to create a virtual environment and install all dependencies. Then run the
+model script with
+
+``` bash
+uv run sCO2.py
+```
 
 Alternatively, using pip:
 
 ``` bash
 pip install .
+```
+
+The model is implemented as a subclass of TESPy's `ModelTemplate` in
+[sCO2.py][]. Use the Jupyter notebook [sCO2.ipynb][] for interactive use of
+the model, cycle diagrams, validation and exergy analysis results.
+
+``` bash
+uv run --with jupyter jupyter lab sCO2.ipynb
 ```
 
 The original data of the plant are obtained from the following
@@ -37,7 +47,7 @@ publication:
 cycle configurations, in: The 6th International Symposium –
 Supercritical CO2 Power Cycles, 2018.*
 
-## Valdiation and Results of Exergy Analysis
+## Validation and Results of Exergy Analysis
 
 The tables below show the results of the simulation as well as the
 validation results. The original data from the publication are provided
@@ -98,54 +108,63 @@ in the .csv files [component_validation.csv][] and
 | 14           |        0.0 |       0.00 |          0.0 |          0.0 |
 | 15           |       -0.0 |       0.00 |         -0.0 |         -0.0 |
 
-*Deviation due to differences in fluid property data*
-
 ### Component data
+
+The electric machines (motors and generator) are modeled as separate
+components. In the publication motor and generator losses are included in the
+balances, therefore, the losses are integrated into the component results
+in the table below.
 
 **TESPy simulation**
 
-|               |   E_F in MW |   E_P in MW |   E_D in MW |   ε in % |   y_Dk in % |   y*_Dk in % |
+| Component     |   E_F in MW |   E_P in MW |   E_D in MW |   ε in % |   y_Dk in % |   y*_Dk in % |
 |:--------------|------------:|------------:|------------:|---------:|------------:|-------------:|
-| Heater        |      154.93 |      154.09 |        0.84 |     99.5 |         0.5 |          1.5 |
-| Cycle closer  |         nan |         nan |         nan |      nan |         nan |          nan |
-| Water cooler  |       22.28 |         nan |       22.28 |      nan |        14.4 |         40.6 |
 | Compressor 1  |       47.49 |       40.20 |        7.29 |     84.6 |         4.7 |         13.3 |
+| Compressor 2  |       37.58 |       32.81 |        4.76 |     87.3 |         3.1 |          8.7 |
+| Heater        |      154.93 |      154.09 |        0.84 |     99.5 |         0.5 |          1.5 |
+| Merge 1       |        0.00 |        0.00 |        0.00 |      nan |         0.0 |          0.0 |
 | Recuperator 1 |       73.81 |       69.93 |        3.87 |     94.8 |         2.5 |          7.1 |
 | Recuperator 2 |      139.19 |      135.43 |        3.76 |     97.3 |         2.4 |          6.8 |
+| Splitter 1    |         nan |         nan |        0.00 |      nan |         0.0 |          0.0 |
 | Turbine       |      197.19 |      185.07 |       12.12 |     93.9 |         7.8 |         22.1 |
-| Splitter 1    |         nan |         nan |         nan |      nan |         nan |          nan |
-| Compressor 2  |       37.58 |       32.81 |        4.76 |     87.3 |         3.1 |          8.7 |
-| Merge 1       |        0.00 |        0.00 |        0.00 |      0.0 |         0.0 |          0.0 |
+| Water cooler  |       22.28 |         nan |       22.28 |      nan |        14.4 |         40.6 |
+| CMP           |       85.07 |       73.01 |       12.06 |      nan |         nan |          nan |
+| REC           |      213.00 |      205.36 |        7.64 |      nan |         nan |          nan |
 
 **Absolute difference in the values Δ**
 
-|               |   Δ E_F in MW |   Δ E_P in MW |   Δ E_D in MW |
+| Component     |   Δ E_F in MW |   Δ E_P in MW |   Δ E_D in MW |
 |:--------------|--------------:|--------------:|--------------:|
+| CMP           |         -0.23 |         -0.09 |         -0.04 |
 | Compressor 1  |         -0.11 |         -0.00 |         -0.01 |
 | Compressor 2  |         -0.12 |         -0.09 |         -0.04 |
 | Heater        |         -3.07 |         -1.01 |         -2.06 |
+| REC           |         -0.10 |         -0.04 |          0.04 |
 | Recuperator 1 |         -0.09 |         -0.07 |         -0.03 |
 | Recuperator 2 |         -0.01 |          0.03 |         -0.04 |
 | Turbine       |         -0.21 |         -0.23 |         -0.08 |
 
 **Relative deviation in the values δ**
 
-|               |   δ E_F in % |   δ E_P in % |   δ E_D in % |
+| Component     |   δ E_F in % |   δ E_P in % |   δ E_D in % |
 |:--------------|-------------:|-------------:|-------------:|
+| CMP           |        -0.27 |        -0.12 |        -0.35 |
 | Compressor 1  |        -0.23 |        -0.00 |        -0.09 |
 | Compressor 2  |        -0.33 |        -0.26 |        -0.75 |
 | Heater        |        -1.94 |        -0.65 |       -71.11 |
+| REC           |        -0.05 |        -0.02 |         0.49 |
 | Recuperator 1 |        -0.12 |        -0.09 |        -0.65 |
 | Recuperator 2 |        -0.01 |         0.02 |        -0.99 |
 | Turbine       |        -0.11 |        -0.12 |        -0.63 |
 
-*High deviation due to differences in component exergy balances*
+*The high deviation in the E_D value of the heater is due to differences
+in the component exergy balances.*
 
 ### Network data (results only)
 
-|   E_F in MW |   E_P in MW |   E_D in MW |   E_L in MW |   ε in % |
-|------------:|------------:|------------:|------------:|---------:|
-|      154.93 |      100.00 |       54.93 |        0.00 |     64.5 |
+|    |   E_F in MW |   E_P in MW |   E_D in MW |   E_L in MW |   ε in % |
+|:---|------------:|------------:|------------:|------------:|---------:|
+| 0  |      154.93 |      100.00 |       54.93 |        0.00 |     64.5 |
 
 ## Citation
 
@@ -182,3 +201,6 @@ SOFTWARE.
   [component_validation.csv]: component_validation.csv
   [connection_validation.csv]: connection_validation.csv
   [10.5281/zenodo.4751796]: https://zenodo.org/record/4751796
+  [uv]: https://docs.astral.sh/uv/
+  [sCO2.py]: ./sCO2.py
+  [sCO2.ipynb]: ./sCO2.ipynb

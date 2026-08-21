@@ -101,15 +101,14 @@ wheels = [
 
 [[package]]
 name = "exerpy"
-version = "0.0.7"
+version = "0.0.10"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
     { name = "pandas" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/b1/f9/31ceca33d2764854b185aafd18698d90a1cbb55cb8a517effd40bf1e30d2/exerpy-0.0.7.tar.gz", hash = "sha256:9c4d3e42c750c1ec68929138542736191eca699693e200b8513ae9c667924e9e", size = 3987115, upload-time = "2026-02-24T18:22:59.415Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a8/96/8a11015e7b3ed4fcabd441c72ffb3f34583f97cf65356db1e458a2feaf53/exerpy-0.0.7-py3-none-any.whl", hash = "sha256:3e04665697d3a936b3181603191b268fa6ec1c4e43801de17171d9bed32bf9b1", size = 143175, upload-time = "2026-02-24T18:21:25.017Z" },
+    { url = "https://files.pythonhosted.org/packages/04/29/7dada3fde631dea1ded358985302d778b56862ce08323596f80d52a761f3/exerpy-0.0.10-py3-none-any.whl", hash = "sha256:31bfc60737c0c9c461810397af20cfaf82a953a54e77c3b6fa83641746f7ec04", size = 152676, upload-time = "2026-06-30T18:10:15.022Z" },
 ]
 
 [[package]]
@@ -629,8 +628,8 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    { name = "exerpy", specifier = ">=0.0.7" },
-    { name = "tespy", specifier = ">=0.9.16.post2" },
+    { name = "exerpy", specifier = ">=0.0.10" },
+    { name = "tespy", specifier = "==0.11.1.post3" },
 ]
 
 [[package]]
@@ -653,7 +652,7 @@ wheels = [
 
 [[package]]
 name = "tespy"
-version = "0.9.16.post3"
+version = "0.11.1.post3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "coolprop" },
@@ -666,9 +665,9 @@ dependencies = [
     { name = "scipy" },
     { name = "tabulate" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/1b/62/4a59b90ac031dc36227528baddef6c730460e7ace6666d45d2c77a6ae3c1/tespy-0.9.16.post3.tar.gz", hash = "sha256:66b2af20dc87a48e0624509d4937f1c5e6cfc438151adc0528ad358e2ba60087", size = 5169368, upload-time = "2026-05-07T07:57:08.478Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/88/6a/5e1b325275ccc3a36609e368629cf671fd4208cf0767fa9a2dede8877895/tespy-0.11.1.post3.tar.gz", hash = "sha256:37380ad9a793e9f225522c839a79427953eea378785c17209328e2cc4cd3c3d5", size = 11702725, upload-time = "2026-08-20T07:04:43.827Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/79/f6/32574be6845d702a115e505ea69179a84051239446e371ac06fb25fa07b2/tespy-0.9.16.post3-py3-none-any.whl", hash = "sha256:829aaadd0b049b435669ea8a04fbbd7f8206324c7a83c4b642409b5e2ee73a83", size = 367466, upload-time = "2026-05-07T07:57:05.444Z" },
+    { url = "https://files.pythonhosted.org/packages/b2/13/4d112f48c703cb0f9e869f67d16d13c6e3683c95404b5f414c1fccff012c/tespy-0.11.1.post3-py3-none-any.whl", hash = "sha256:89ae55bee7dc36c57a3b8d4fa3de54a1751fcdd323515461507946bfeff75ea6", size = 382726, upload-time = "2026-08-20T07:04:32.064Z" },
 ]
 
 [[package]]

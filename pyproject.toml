@@ -1,10 +1,10 @@
 [project]
 name = "sco2-exergy"
 version = "0.1.0"
-description = "Add your description here"
+description = "Exergy analysis of a supercritical CO2 power cycle in TESPy"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "exerpy>=0.0.7",
-    "tespy>=0.9.16.post3",
+    "exerpy>=0.0.10",
+    "tespy==0.11.1.post3",
 ]
